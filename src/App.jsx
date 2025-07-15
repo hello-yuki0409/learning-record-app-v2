@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LearningForm } from "./components/LearningForm";
 import { HistoryList } from "./components/HistoryList";
 import { LearningDetails } from "./components/LearningDetails";
+import { getAllHistory } from "./supabaseFunction";
 
 export function App() {
   const [records, setRecords] = useState("");
@@ -9,6 +10,16 @@ export function App() {
   const [history, setHistory] = useState([]);
   const [error, setError] = useState("");
   const [remark, setRemark] = useState("");
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    const getTodos = async () => {
+      const todos = await getAllHistory();
+      setTodos(todos);
+      console.log(todos);
+    };
+    getTodos();
+  }, []);
 
   // recordsかtimeが空欄でボタン押されたら表示する
   const onClickAdd = (event) => {
@@ -25,7 +36,7 @@ export function App() {
     setRemark("");
   };
   // 学習時間を合計する処理
-  const totalStudyTime = history.reduce(
+  const totalStudyTime = todos.reduce(
     (sum, records) => sum + Number(records.time),
     0
   );
@@ -67,7 +78,7 @@ export function App() {
         currentGoal={currentGoal}
         baseGoal={baseGoal}
       />
-      <HistoryList history={history} />
+      <HistoryList history={todos} />
     </div>
   );
 }
