@@ -11,12 +11,14 @@ export function App() {
   const [error, setError] = useState("");
   const [remark, setRemark] = useState("");
   const [todos, setTodos] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); //データ読み込み中かどうか
 
   useEffect(() => {
     const getTodos = async () => {
+      setIsLoading(true); // <- 読み込み開始時
       const todos = await getAllHistory();
       setTodos(todos);
-      console.log(todos);
+      setIsLoading(false); // <- 読み込み完了時
     };
     getTodos();
   }, []);
@@ -51,6 +53,26 @@ export function App() {
 
   // 次の目標時間 勉強に終わりはない、産まれてから死ぬまで勉強
   const currentGoal = baseGoal + goalCount * plusGoal;
+
+  // Loading画面を表示する処理
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          background: "#333",
+          color: "#fff",
+          minHeight: "100vh",
+          padding: "2em",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: "2rem",
+        }}
+      >
+        Loading...
+      </div>
+    );
+  }
 
   return (
     <div
