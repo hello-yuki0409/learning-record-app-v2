@@ -2,41 +2,51 @@ import { useState, useEffect } from "react";
 import { LearningForm } from "./components/LearningForm";
 import { HistoryList } from "./components/HistoryList";
 import { LearningDetails } from "./components/LearningDetails";
-import { getAllHistory } from "./supabaseFunction";
+import { getAllHistory, addHistory } from "./supabaseFunction";
 
 export function App() {
   const [records, setRecords] = useState("");
   const [time, setTime] = useState("");
-  const [history, setHistory] = useState([]);
   const [error, setError] = useState("");
   const [remark, setRemark] = useState("");
   const [todos, setTodos] = useState([]);
   const [isLoading, setIsLoading] = useState(true); //データ読み込み中かどうか
 
+  const fetchTodos = async () => {
+    setIsLoading(true); // 読み込み開始時
+    const todos = await getAllHistory();
+    setTodos(todos);
+    setIsLoading(false); // 読み込み完了時
+  };
+
+  // useEffectの外でも fetchTodos を使えるようにする
   useEffect(() => {
-    const getTodos = async () => {
-      setIsLoading(true); // <- 読み込み開始時
-      const todos = await getAllHistory();
-      setTodos(todos);
-      setIsLoading(false); // <- 読み込み完了時
-    };
-    getTodos();
+    fetchTodos();
   }, []);
 
   // recordsかtimeが空欄でボタン押されたら表示する
-  const onClickAdd = (event) => {
+  const onClickAdd = async (event) => {
     event.preventDefault();
     if (records === "" || time === "") {
       setError("入力されていない項目があります。");
       return;
     }
-    // 配列コピー -> 新しく入力したものを追加する -> その後formを初期化する処理
-    setHistory([...history, { records, time, remark }]);
-    setRecords("");
-    setTime("");
-    setError("");
-    setRemark("");
+
+    setIsLoading(true); // 追加開始
+    const result = await addHistory(records, time, remark); // Supabaseに追加
+    // "undefined" じゃなければ成功とみなす
+    if (result !== undefined) {
+      await fetchTodos(); // その場で再取得して即時反映させる
+      setRecords("");
+      setTime("");
+      setRemark("");
+      setError("");
+    } else {
+      setError("データの追加に失敗しました。");
+    }
+    setIsLoading(false);
   };
+
   // 学習時間を合計する処理
   const totalStudyTime = todos.reduce(
     (sum, records) => sum + Number(records.time),

@@ -1,6 +1,7 @@
 export const LearningForm = (props) => {
   const { records, setRecords, time, setTime, remark, setRemark, onClickAdd } =
     props;
+
   return (
     <form>
       <h1>学習時間記録</h1>

@@ -10,7 +10,7 @@ export const addHistory = async (records, time, remark) => {
     .from("study-record")
     .insert([{ records, time, remark }]);
   if (error) {
-    console.error("Error adding history:", error);
+    console.error("エラーだよん♪♪:", error);
     return null;
   }
   return data;
