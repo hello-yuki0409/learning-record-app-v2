@@ -95,6 +95,7 @@ export function App() {
       <LearningDetails
         records={records}
         time={time}
+        remark={remark}
         error={error}
         totalStudyTime={totalStudyTime}
         currentGoal={currentGoal}
