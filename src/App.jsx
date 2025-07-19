@@ -89,7 +89,7 @@ export function App() {
           fontSize: "2rem",
         }}
       >
-        Loading...
+        Now Loading...
       </div>
     );
   }
