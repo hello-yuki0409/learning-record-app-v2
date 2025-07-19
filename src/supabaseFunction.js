@@ -19,7 +19,6 @@ export const addHistory = async (records, time, remark) => {
 export const deleteHistory = async (id) => {
   const { error } = await supabase.from("study-record").delete().eq("id", id);
   if (error) {
-    // エラー処理いる？削除でいい？
     console.error("削除エラー:", error);
     return null;
   }
