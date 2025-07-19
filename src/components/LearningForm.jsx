@@ -41,7 +41,18 @@ export const LearningForm = (props) => {
           />
         </label>
       </div>
-      <button onClick={onClickAdd}>登録</button>
+      <button
+        onClick={onClickAdd}
+        style={{
+          color: "#333",
+          border: "none",
+          borderRadius: "0.3em",
+          padding: "0.2em 0.6em",
+          cursor: "pointer",
+        }}
+      >
+        登録
+      </button>
     </form>
   );
 };
