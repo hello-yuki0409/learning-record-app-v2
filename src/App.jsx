@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { LearningForm } from "./components/LearningForm";
 import { HistoryList } from "./components/HistoryList";
 import { LearningDetails } from "./components/LearningDetails";
-import { getAllHistory, addHistory } from "./supabaseFunction";
+import { getAllHistory, addHistory, deleteHistory } from "./supabaseFunction";
 
 export function App() {
   const [records, setRecords] = useState("");
@@ -47,6 +47,16 @@ export function App() {
     setIsLoading(false);
   };
 
+  // 登録後の削除処理を追加
+  const handleDelete = async (id) => {
+    setIsLoading(true);
+    const result = await deleteHistory(id);
+    if (result) {
+      await fetchTodos();
+    }
+    setIsLoading(false);
+  };
+
   // 学習時間を合計する処理
   const totalStudyTime = todos.reduce(
     (sum, records) => sum + Number(records.time),
@@ -61,7 +71,7 @@ export function App() {
       ? 0
       : Math.floor((totalStudyTime - baseGoal) / plusGoal) + 1;
 
-  // 次の目標時間 勉強に終わりはない、産まれてから死ぬまで勉強
+  // 次の目標時間 ~勉強に終わりはない、産まれてから死ぬまで勉強~
   const currentGoal = baseGoal + goalCount * plusGoal;
 
   // Loading画面を表示する処理
@@ -111,7 +121,7 @@ export function App() {
         currentGoal={currentGoal}
         baseGoal={baseGoal}
       />
-      <HistoryList history={todos} />
+      <HistoryList history={todos} onClickDelete={handleDelete} />
     </div>
   );
 }
