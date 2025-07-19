@@ -10,16 +10,11 @@ export const addHistory = async (records, time, remark) => {
     .from("study-record")
     .insert([{ records, time, remark }]);
   if (error) {
-    console.error("エラーだよん♪♪:", error);
+    console.error("エラーだよん♪♪", error);
     return null;
   }
   return data;
 };
-
-// const response = await supabase
-//   .from('countries')
-//   .delete()
-//   .eq('id', 1)
 
 export const deleteHistory = async (id) => {
   const { error } = await supabase.from("study-record").delete().eq("id", id);
