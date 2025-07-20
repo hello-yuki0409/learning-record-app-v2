@@ -35,7 +35,7 @@
 
 /* ベース背景と全体フォント */
 body {
-  background: linear-gradient(135deg, #1a2a23 0%, #233329 100%);
+  background: #183c2f;
   color: #e0f2e9;
   font-family: "Segoe UI", "Hiragino Sans", "Meiryo", sans-serif;
   font-size: 17px;
@@ -47,7 +47,7 @@ body {
 
 /* アプリ全体のレイアウト */
 .app-container {
-  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  background: none;
   color: #fff;
   min-height: 100vh;
   padding: 2em 0;
