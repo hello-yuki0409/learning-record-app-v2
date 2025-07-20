@@ -47,23 +47,24 @@ body {
 
 /* アプリ全体のレイアウト */
 .app-container {
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  color: #fff;
   min-height: 100vh;
+  padding: 2em 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3em 0 2em 0;
-  background: none;
 }
 
 /* カードUI */
 .card {
-  background: rgba(34, 56, 44, 0.97);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 1.5px 0 #2e4d3a inset;
-  padding: 2.5em 2em 2em 2em;
-  margin-bottom: 2.5em;
+  background: #222c36;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  padding: 2em;
+  margin-bottom: 2em;
   width: 100%;
-  max-width: 500px;
+  max-width: 480px;
   transition: box-shadow 0.2s;
 }
 
@@ -86,23 +87,21 @@ h2 {
 input,
 textarea {
   width: 100%;
-  padding: 0.8em 1em;
-  margin-top: 0.4em;
-  margin-bottom: 1.2em;
+  padding: 0.7em;
+  margin-top: 0.3em;
+  margin-bottom: 1em;
   border: none;
-  border-radius: 10px;
-  font-size: 17px;
-  background: #22382c;
-  color: #e0f2e9;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #2c3e50;
+  color: #fff;
   box-shadow: 0 1px 4px #1a2a23 inset;
   transition: background 0.2s, box-shadow 0.2s;
 }
 
 input:focus,
 textarea:focus {
-  background: #2e4d3a;
-  outline: 2px solid #7be495;
-  box-shadow: 0 0 0 2px #7be495;
+  outline: 2px solid #6dd5ed;
 }
 
 /* ラベル */
@@ -113,23 +112,19 @@ label {
 
 /* ボタン */
 button {
-  background: linear-gradient(90deg, #7be495 0%, #329d6d 100%);
-  color: #1a2a23;
+  background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
+  color: #fff;
   border: none;
-  border-radius: 10px;
-  padding: 0.7em 1.5em;
-  font-size: 1.1em;
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 2px 8px #1a2a23;
-  margin-top: 0.5em;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  transition: background 0.2s;
 }
 
 button:hover {
-  background: linear-gradient(90deg, #329d6d 0%, #7be495 100%);
-  color: #fff;
-  box-shadow: 0 4px 16px #1a2a23;
+  background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
 }
 
 /* エラー表示 */
@@ -141,15 +136,15 @@ button:hover {
 
 /* 履歴リスト */
 ul {
-  padding-left: 0;
+  padding-left: 1.2em;
   margin: 0;
 }
 
 li {
-  background: #2e4d3a;
-  border-radius: 10px;
-  margin-bottom: 0.9em;
-  padding: 1em 1.2em;
+  background: #273142;
+  border-radius: 8px;
+  margin-bottom: 0.7em;
+  padding: 0.7em;
   list-style: none;
   display: flex;
   flex-direction: column;

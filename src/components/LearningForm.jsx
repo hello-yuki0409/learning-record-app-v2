@@ -7,7 +7,7 @@ export const LearningForm = (props) => {
       <h1>学習時間記録</h1>
       <div>
         <label>
-          学習内容：
+          学習内容
           <input
             type="text"
             value={records}
@@ -19,7 +19,7 @@ export const LearningForm = (props) => {
       </div>
       <div>
         <label>
-          学習時間：
+          学習時間
           <input
             type="number"
             value={time}
@@ -29,12 +29,11 @@ export const LearningForm = (props) => {
             placeholder="半角数字で入力"
             style={{ fontSize: "16px" }}
           />
-          時間
         </label>
       </div>
       <div>
         <label>
-          備考：
+          備考
           <input
             type="text"
             value={remark}

@@ -3,6 +3,7 @@ import { LearningForm } from "./components/LearningForm";
 import { HistoryList } from "./components/HistoryList";
 import { LearningDetails } from "./components/LearningDetails";
 import { getAllHistory, addHistory, deleteHistory } from "./supabaseFunction";
+import "./App.css";
 
 export function App() {
   const [records, setRecords] = useState("");
