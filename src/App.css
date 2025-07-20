@@ -33,10 +33,152 @@
   }
 }
 
-.card {
-  padding: 2em;
+/* ベース背景と全体フォント */
+body {
+  background: linear-gradient(135deg, #1a2a23 0%, #233329 100%);
+  color: #e0f2e9;
+  font-family: "Segoe UI", "Hiragino Sans", "Meiryo", sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.01em;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-.read-the-docs {
-  color: #888;
+/* アプリ全体のレイアウト */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em 0 2em 0;
+  background: none;
+}
+
+/* カードUI */
+.card {
+  background: rgba(34, 56, 44, 0.97);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 1.5px 0 #2e4d3a inset;
+  padding: 2.5em 2em 2em 2em;
+  margin-bottom: 2.5em;
+  width: 100%;
+  max-width: 500px;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), 0 2px 0 #3a5d47 inset;
+}
+
+/* タイトル */
+h1,
+h2 {
+  margin-top: 0;
+  margin-bottom: 1.2em;
+  font-weight: 700;
+  color: #b8f5c5;
+  text-shadow: 0 2px 8px #1a2a23;
+  letter-spacing: 0.08em;
+}
+
+/* 入力欄 */
+input,
+textarea {
+  width: 100%;
+  padding: 0.8em 1em;
+  margin-top: 0.4em;
+  margin-bottom: 1.2em;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  background: #22382c;
+  color: #e0f2e9;
+  box-shadow: 0 1px 4px #1a2a23 inset;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  background: #2e4d3a;
+  outline: 2px solid #7be495;
+  box-shadow: 0 0 0 2px #7be495;
+}
+
+/* ラベル */
+label {
+  font-weight: 500;
+  color: #b8f5c5;
+}
+
+/* ボタン */
+button {
+  background: linear-gradient(90deg, #7be495 0%, #329d6d 100%);
+  color: #1a2a23;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7em 1.5em;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #1a2a23;
+  margin-top: 0.5em;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #329d6d 0%, #7be495 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px #1a2a23;
+}
+
+/* エラー表示 */
+[style*="color: red"] {
+  color: #ffb3b3 !important;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+/* 履歴リスト */
+ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+li {
+  background: #2e4d3a;
+  border-radius: 10px;
+  margin-bottom: 0.9em;
+  padding: 1em 1.2em;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 1px 4px #1a2a23 inset;
+  transition: background 0.2s;
+}
+
+li:hover {
+  background: #3a5d47;
+}
+
+/* スクロールバーもダークに */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #22382c;
+}
+::-webkit-scrollbar-thumb {
+  background: #329d6d;
+  border-radius: 4px;
+}
+
+/* モバイル対応 */
+@media (max-width: 600px) {
+  .card {
+    padding: 1em;
+    max-width: 98vw;
+  }
+  body {
+    font-size: 15px;
+  }
 }

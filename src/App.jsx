@@ -95,33 +95,32 @@ export function App() {
   }
 
   return (
-    <div
-      style={{
-        background: "#333",
-        color: "#fff",
-        minHeight: "100vh",
-        padding: "2em",
-      }}
-    >
-      <LearningForm
-        records={records}
-        setRecords={setRecords}
-        time={time}
-        setTime={setTime}
-        remark={remark}
-        setRemark={setRemark}
-        onClickAdd={onClickAdd}
-      />
-      <LearningDetails
-        records={records}
-        time={time}
-        remark={remark}
-        error={error}
-        totalStudyTime={totalStudyTime}
-        currentGoal={currentGoal}
-        baseGoal={baseGoal}
-      />
-      <HistoryList history={todos} onClickDelete={handleDelete} />
+    <div className="app-container">
+      <div className="card">
+        <LearningForm
+          records={records}
+          setRecords={setRecords}
+          time={time}
+          setTime={setTime}
+          remark={remark}
+          setRemark={setRemark}
+          onClickAdd={onClickAdd}
+        />
+      </div>
+      <div className="card">
+        <LearningDetails
+          records={records}
+          time={time}
+          remark={remark}
+          error={error}
+          totalStudyTime={totalStudyTime}
+          currentGoal={currentGoal}
+          baseGoal={baseGoal}
+        />
+      </div>
+      <div className="card">
+        <HistoryList history={todos} onClickDelete={handleDelete} />
+      </div>
     </div>
   );
 }
