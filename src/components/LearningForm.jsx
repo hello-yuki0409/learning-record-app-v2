@@ -13,6 +13,7 @@ export const LearningForm = (props) => {
             value={records}
             onChange={(e) => setRecords(e.target.value)}
             placeholder="学習内容"
+            style={{ fontSize: "16px" }}
           />
         </label>
       </div>
@@ -26,6 +27,7 @@ export const LearningForm = (props) => {
             min="0"
             step="0.1"
             placeholder="半角数字で入力"
+            style={{ fontSize: "16px" }}
           />
           時間
         </label>
@@ -38,6 +40,7 @@ export const LearningForm = (props) => {
             value={remark}
             onChange={(e) => setRemark(e.target.value)}
             placeholder="備考メモ"
+            style={{ fontSize: "16px" }}
           />
         </label>
       </div>
