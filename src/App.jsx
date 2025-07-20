@@ -101,6 +101,7 @@ export function App() {
         color: "#fff",
         minHeight: "100vh",
         padding: "2em",
+        fontSize: "16px",
       }}
     >
       <LearningForm
