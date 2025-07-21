@@ -97,6 +97,7 @@ export function App() {
 
   return (
     <div className="app-container">
+      <h1 data-testid="title">Hello Jest</h1> // テスト用タイトル
       <div className="card">
         <LearningForm
           records={records}
