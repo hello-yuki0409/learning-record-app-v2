@@ -35,8 +35,8 @@
 
 /* ベース背景と全体フォント */
 body {
-  background: #183c2f;
-  color: #e0f2e9;
+  background: #eafaf1; /* 明るいグリーン系に変更 */
+  color: #213547;
   font-family: "Segoe UI", "Hiragino Sans", "Meiryo", sans-serif;
   font-size: 17px;
   letter-spacing: 0.01em;
@@ -48,7 +48,7 @@ body {
 /* アプリ全体のレイアウト */
 .app-container {
   background: none;
-  color: #fff;
+  color: #213547;
   min-height: 100vh;
   padding: 2em 0;
   display: flex;
@@ -58,9 +58,9 @@ body {
 
 /* カードUI */
 .card {
-  background: #222c36;
+  background: #f6fff9; /* 明るいホワイトグリーン系 */
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 24px rgba(123, 229, 149, 0.15);
   padding: 2em;
   margin-bottom: 2em;
   width: 100%;
@@ -69,7 +69,7 @@ body {
 }
 
 .card:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), 0 2px 0 #3a5d47 inset;
+  box-shadow: 0 12px 40px rgba(123, 229, 149, 0.25), 0 2px 0 #b8f5c5 inset;
 }
 
 /* タイトル */
@@ -78,8 +78,8 @@ h2 {
   margin-top: 0;
   margin-bottom: 1.2em;
   font-weight: 700;
-  color: #b8f5c5;
-  text-shadow: 0 2px 8px #1a2a23;
+  color: #329d6d;
+  text-shadow: 0 2px 8px #eafaf1;
   letter-spacing: 0.08em;
 }
 
@@ -90,18 +90,19 @@ textarea {
   max-width: 100%;
   box-sizing: border-box;
   padding: 0.7em;
-  border: none;
+  border: 1px solid #b8f5c5;
   border-radius: 8px;
   font-size: 16px;
-  background: #2c3e50;
-  color: #fff;
-  box-shadow: 0 1px 4px #1a2a23 inset;
+  background: #eafaf1;
+  color: #213547;
+  box-shadow: 0 1px 4px #b8f5c5 inset;
   transition: background 0.2s, box-shadow 0.2s;
 }
 
 input:focus,
 textarea:focus {
   outline: 2px solid #6dd5ed;
+  background: #fff;
 }
 
 /* フォーム内のラベルと入力欄を縦並び＆中央寄せ */
@@ -117,13 +118,13 @@ label {
   text-align: center;
   margin-bottom: 0.3em;
   font-weight: 500;
-  color: #b8f5c5;
+  color: #329d6d;
 }
 
 /* ボタン */
 button {
-  background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
-  color: #fff;
+  background: linear-gradient(90deg, #6dd5ed 0%, #b8f5c5 100%);
+  color: #213547;
   border: none;
   border-radius: 8px;
   padding: 0.6em 1.2em;
@@ -134,12 +135,13 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
+  background: linear-gradient(90deg, #b8f5c5 0%, #6dd5ed 100%);
+  color: #329d6d;
 }
 
 /* エラー表示 */
 [style*="color: red"] {
-  color: #ffb3b3 !important;
+  color: #ff6b6b !important;
   font-weight: bold;
   margin-bottom: 1em;
 }
@@ -151,7 +153,7 @@ ul {
 }
 
 li {
-  background: #273142;
+  background: #eafaf1;
   border-radius: 8px;
   margin-bottom: 0.7em;
   padding: 0.7em;
@@ -159,21 +161,21 @@ li {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  box-shadow: 0 1px 4px #1a2a23 inset;
+  box-shadow: 0 1px 4px #b8f5c5 inset;
   transition: background 0.2s;
 }
 
 li:hover {
-  background: #3a5d47;
+  background: #f6fff9;
 }
 
-/* スクロールバーもダークに */
+/* スクロールバーも明るく */
 ::-webkit-scrollbar {
   width: 8px;
-  background: #22382c;
+  background: #b8f5c5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #329d6d;
+  background: #6dd5ed;
   border-radius: 4px;
 }
 
