@@ -25,6 +25,8 @@ export default [
         beforeEach: "readonly",
         afterEach: "readonly",
         console: "readonly",
+        jest: "readonly",
+        document: "readonly",
       },
     },
     plugins: {

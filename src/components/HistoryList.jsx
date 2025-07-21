@@ -1,10 +1,15 @@
+import React from "react";
 export const HistoryList = ({ history, onClickDelete }) => {
   return (
     <div>
       <h2>登録履歴</h2>
       <ul>
         {history.map((record) => (
-          <li key={record.id} style={{ marginBottom: "0.5em" }}>
+          <li
+            key={record.id}
+            data-testid="history-item"
+            style={{ marginBottom: "0.5em" }}
+          >
             学習内容: {record.records}
             学習時間: {record.time} 時間 備考： {record.remark}
             <button

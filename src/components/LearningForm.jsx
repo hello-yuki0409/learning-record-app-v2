@@ -1,3 +1,4 @@
+import React from "react";
 export const LearningForm = (props) => {
   const { records, setRecords, time, setTime, remark, setRemark, onClickAdd } =
     props;
