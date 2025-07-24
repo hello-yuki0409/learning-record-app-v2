@@ -27,6 +27,7 @@ export default [
         console: "readonly",
         jest: "readonly",
         document: "readonly",
+        require: "readonly",
       },
     },
     plugins: {
