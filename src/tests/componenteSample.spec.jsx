@@ -4,9 +4,9 @@ import "@testing-library/jest-dom";
 import { AppForTest } from "../AppForTest";
 
 describe("Title Test", () => {
-  it("タイトルがHello Jestであること", () => {
+  it("タイトルが学習時間記録であること", () => {
     render(<AppForTest />);
     const title = screen.getByTestId("title");
-    expect(title).toHaveTextContent("Hello Jest");
+    expect(title).toHaveTextContent("学習時間記録");
   });
 });

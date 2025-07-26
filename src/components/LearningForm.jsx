@@ -5,7 +5,7 @@ export const LearningForm = (props) => {
 
   return (
     <form>
-      <h1>学習時間記録</h1>
+      <h1 data-testid="title">学習時間記録</h1>
       <div>
         <label>
           学習内容
