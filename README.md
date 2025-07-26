@@ -12,14 +12,17 @@ React（Vite環境）＋Supabaseを利用。
 - 学習内容・学習時間・備考の記録
 - 登録履歴の一覧表示／削除
 - 合計学習時間の自動計算・目標管理
-- （技術者向け）自動テスト・CI対応
+- 自動テスト・CI対応
 
 ## 技術スタック
 
 - [React](https://react.dev/) (Vite)
-- [Jest](https://jestjs.io/) ＋ [React Testing Library](https://testing-library.com/)
+- [Jest](https://jestjs.io/) + [React Testing Library](https://testing-library.com/)
 - [Supabase](https://supabase.com/) (DB/API)
+- [Firebase Hosting](https://firebase.google.com/?hl=ja)（ホスティング・デプロイ）
 - [GitHub Actions](https://docs.github.com/ja/actions)（CI/CD）
+- [Makefile](https://www.gnu.org/software/make/manual/make.html)（デプロイスクリプト）
+- [ESLint](https://eslint.org/)（静的コード解析）
 
 ## 開発・実行環境
 
